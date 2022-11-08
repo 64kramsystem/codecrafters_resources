@@ -1,0 +1,34 @@
+@startjson
+#highlight "Page Header"
+#highlight "u16[]"
+#highlight "u8[]"
+#highlight "Cell[]"
+
+#highlight "Page Header" / "u8"
+#highlight "Page Header" / "u16"
+#highlight "Page Header" / "u16 "
+#highlight "Page Header" / "u16  "
+#highlight "Page Header" / "u8"
+
+#highlight "Cell[]" / "Payload" / "Record Header"
+#highlight "Cell[]" / "Payload" / "Record Header" / "varint"
+#highlight "Cell[]" / "Payload" / "Record Header" / "varint[]"
+
+#highlight "Cell[]" / "Payload" / "Record Body"
+{
+   "Page Header": {
+     "u8":    "Page type",
+     "u16":   "(ignore)",
+     "u16 ":  "Cells count",
+     "u16  ": "(ignore)",
+     "u8":    "(ignore)",
+     "u32":   "Rightmost pointer"
+   },
+   "u16[]":  "Cell pointers",
+   "u8[]":   "(ignore)",
+   "Cell[]": {
+     "u32":          "Left child pointer",
+     "varint":       "RowId"
+   }
+}
+@endjson
